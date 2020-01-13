@@ -1,21 +1,11 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
-const Task = ({id, title, text, isDone}) => {
+const Task = ({id, title, text, onClick}) => {
     return (
-        <div>
-            <h3>{title}</h3>
-            <div>{text}</div>
-            <div>completed: {isDone ? 'y' : 'n'}</div>
+        <div onClick={onClick}>
+            <h3>{title}</h3>:<div>{text}</div>
         </div>
     );
-};
-
-Task.propTypes = {
-    id: PropTypes.any.isRequired,
-    title: PropTypes.string,
-    text: PropTypes.string,
-    isDone: PropTypes.bool,
 };
 
 export default Task;
