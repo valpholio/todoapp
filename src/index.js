@@ -18,3 +18,5 @@ const timerId = setInterval(()=> {
 //store.dispatch(createTask('Shopping', 'Buy milk'));
 
 ReactDOM.render(<App store={store} cleanupId={timerId}/>, document.getElementById('root'));
+
+ReactDOM.render(<App store={store} cleanupId={timerId}/>, document.getElementById('root'));

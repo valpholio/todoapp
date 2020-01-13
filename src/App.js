@@ -10,6 +10,10 @@ function App({store, cleanupId}) {
         return () => { if (cleanupId) {clearInterval(cleanupId);} }
     });
 
+    useEffect(() => {
+        return () => { if (cleanupId) {clearInterval(cleanupId);} }
+    });
+
   return (
       <Provider store={store}>
           <Main></Main>
