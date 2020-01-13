@@ -1,26 +1,24 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useEffect } from 'react';
+import PropTypes from 'prop-types';
+import {Provider} from 'react-redux';
+import Main from './containers/Main.jsx';
 import './App.css';
 
-function App() {
+function App({store, cleanupId}) {
+    useEffect(() => {
+        return () => { if (cleanupId) {clearInterval(cleanupId);} }
+    });
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <Provider store={store}>
+          <Main></Main>
+      </Provider>
   );
 }
+
+App.propTypes = {
+    store: PropTypes.object.isRequired,
+    cleanupId: PropTypes.any
+};
 
 export default App;
