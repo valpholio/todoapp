@@ -22,10 +22,7 @@ export default function tasksReducer(state=[],action) {
             return  state;
         }
         case GET_TASKS_FROM_STORAGE: {
-            const {type, ...tasks} = action;
-            console.log(GET_TASKS_FROM_STORAGE,[...action.tasks])
-
-            return [...action.tasks];
+            return action.tasks ? [...action.tasks] : [];
         }
         default:
             return  state;
