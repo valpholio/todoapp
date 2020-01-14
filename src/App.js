@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import {Provider} from 'react-redux';
 import Main from './containers/Main.jsx';
 import './App.css';
-import Main from './components/Main.jsx';
 
 function App({store, cleanupId}) {
     useEffect(() => {

@@ -1,12 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Task = ({id, title, text, isDone}) => {
+const Task = ({title, text, isDone}) => {
     return (
         <div>
-            <h3>{title}</h3>
+            <h3 className='task-name'>{title}</h3>
             <div>{text}</div>
-            <div>completed: {isDone ? 'y' : 'n'}</div>
         </div>
     );
 };

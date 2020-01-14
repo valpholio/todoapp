@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 
 const RemoveTaskButton = ({removeTask = () => {}, id}) => {
     return (
-        <div onClick={() => removeTask(id)}>
-            Delete
-        </div>
+            <button onClick={() => removeTask(id)} className="btn btn-default btn-sm">
+                <span className="glyphicon glyphicon-remove"></span> Remove
+            </button>
     );
 };
 

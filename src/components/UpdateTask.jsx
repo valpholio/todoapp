@@ -19,13 +19,13 @@ const UpdateTask = ({createTask, exitAddTaskMode,editTask, exitEditTaskMode, ...
         <div>
             <div>
             Title:<br/>
-            <input  type="text" value={title} onChange={e=>setTitle(e.target.value)} />
+            <input type='text' value={title} onChange={e=>setTitle(e.target.value)} className='form-control' />
                 <br/>
             Text:<br/>
-            <textarea name="text" cols="96" rows="2" value={text} onChange={e=>setText(e.target.value)}></textarea>
+            <textarea name='text' rows='5' value={text} onChange={e=>setText(e.target.value)} className='form-control' ></textarea>
             </div>
-            <button onClick={handler} disabled={!(title && text)}>Save</button>
-            <button onClick={task.id? exitEditTaskMode: exitAddTaskMode}>Cancel</button>
+            <button onClick={handler} disabled={!(title && text)} className='btn btn-default' >Save</button>
+            <button onClick={task.id? exitEditTaskMode: exitAddTaskMode} className='btn btn-default'>Cancel</button>
         </div>
     );
 };

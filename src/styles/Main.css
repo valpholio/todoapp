@@ -1,0 +1,30 @@
+.Main {
+    width: 80vw;
+    max-width:800px;
+    margin: 0 auto;
+}
+
+.list-group-item {
+    margin-top:15px;
+    border-radius: 5px;
+}
+
+h3.task-name {
+    margin-top: 10px;
+}
+.btn-default {
+    margin: 5px 5px 5px 0;
+}
+
+.done-icon {
+    float:right;
+    color: #2c786c;
+}
+
+.button-group {
+    margin-top: 10px;
+}
+
+.add-form-placeholder {
+    height: 255px;
+}

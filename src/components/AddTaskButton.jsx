@@ -5,9 +5,9 @@ const AddTaskButton = ({
                            enterAddTaskMode = () => {}
                        }) => {
     return (
-        <div onClick={enterAddTaskMode}>
-            + Add Task
-        </div>
+            <button onClick={enterAddTaskMode} className="btn btn-default btn-sm">
+                <span className="glyphicon glyphicon-plus"></span> Add Task
+            </button>
     );
 };
 

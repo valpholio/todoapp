@@ -6,9 +6,9 @@ const CompleteTaskButton = ({
     }
                             }) => {
     return (
-        <div onClick={() => doTask(id)}>
-            Complete
-        </div>
+            <button onClick={() => doTask(id)} className="btn btn-default btn-sm">
+                <span className="glyphicon glyphicon-ok"></span> Mark as Done
+            </button>
     );
 };
 

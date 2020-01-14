@@ -6,9 +6,9 @@ const EditTaskButton = ({
                             }, id
                         }) => {
     return (
-        <div onClick={() => enterEditTaskMode(id)}>
-            Edit
-        </div>
+            <button onClick={() => enterEditTaskMode(id)} className="btn btn-default btn-sm">
+                <span className="glyphicon glyphicon-edit"></span> Edit
+            </button>
     );
 };
 
