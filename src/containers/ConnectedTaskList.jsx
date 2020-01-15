@@ -38,7 +38,7 @@ ConnectedTaskList.propTypes = {
     tasks: PropTypes.array
 };
 
-const compareDesc = field => (a,b) => a[field].toLowerCase() < b[field].toLowerCase() ? 1: a[field].toLowerCase() === b[field].toLowerCase() ? 0: -1;
+const compareDesc = field => (a,b) => String(a[field]).toLowerCase() < String(b[field]).toLowerCase() ? 1: String(a[field]).toLowerCase() === String(b[field]).toLowerCase() ? 0: -1;
 
 const mapStateToProps = (state) => {
     const tasks = state.tasks.sort(compareDesc('title'));
