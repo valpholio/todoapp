@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: components/UpdateTask.jsx</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: components/UpdateTask.jsx</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import React, { useState } from 'react';
+import PropTypes from 'prop-types';
+
+/**
+ * Form to create|edit task. Contains Title and Text input fields, Save and Cancel buttons.
+ * @param {function} createTask - Part of event handler, that is called on click on Save button, when task id is absent. Emits redux action to create a new task.
+ * @param {function} exitAddTaskMode - Part of event handler, that is called on click on Save button, when task id is absent. Informs subscribers that add task mode should be turned off.
+ * @param {function} editTask - Part of event handler, that is called on click on Save button, when task id is present. Emits redux action to edit the task.
+ * @param {function} exitEditTaskMode - Part of event handler, that is called on click on Save button, when task id is present. Informs subscribers that edit task mode should be turned off.
+ * @param {NumberLike=} id - Id of the task.
+ * @param {string} title - Title of the task.
+ * @param {string} text - Text of the task.
+ */
+const UpdateTask = ({createTask, exitAddTaskMode,editTask, exitEditTaskMode, ...task}) => {
+    const [title, setTitle] = useState(task.title ||'');
+    const [text, setText] = useState(task.text ||'');
+
+    const createHandler = () => {
+        createTask(title,text);
+        exitAddTaskMode();
+    };
+    const editHandler = () => {
+        editTask(task.id, title, text);
+        exitEditTaskMode();
+    };
+
+    const handler = task.id? editHandler: createHandler;
+    return (
+        &lt;div>
+            &lt;div>
+            Title:&lt;br/>
+            &lt;input type='text' value={title} onChange={e=>setTitle(e.target.value)} className='form-control' />
+                &lt;br/>
+            Text:&lt;br/>
+            &lt;textarea name='text' rows='5' value={text} onChange={e=>setText(e.target.value)} className='form-control' >&lt;/textarea>
+            &lt;/div>
+            &lt;button onClick={handler} disabled={!(title &amp;&amp; text)} className='btn btn-default' >Save&lt;/button>
+            &lt;button onClick={task.id? exitEditTaskMode: exitAddTaskMode} className='btn btn-default'>Cancel&lt;/button>
+        &lt;/div>
+    );
+};
+
+UpdateTask.propTypes = {
+    createTask: PropTypes.func,
+    exitAddTaskMode: PropTypes.func,
+    editTask: PropTypes.func,
+    exitEditTaskMode: PropTypes.func,
+};
+
+export default UpdateTask;
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#AddTaskButton">AddTaskButton</a></li><li><a href="global.html#App">App</a></li><li><a href="global.html#appReducer">appReducer</a></li><li><a href="global.html#CompleteTaskButton">CompleteTaskButton</a></li><li><a href="global.html#ConnectedAddTaskButton">ConnectedAddTaskButton</a></li><li><a href="global.html#ConnectedCompleteTaskButton">ConnectedCompleteTaskButton</a></li><li><a href="global.html#ConnectedEditTaskButton">ConnectedEditTaskButton</a></li><li><a href="global.html#ConnectedRemoveTaskButton">ConnectedRemoveTaskButton</a></li><li><a href="global.html#ConnectedTaskList">ConnectedTaskList</a></li><li><a href="global.html#ConnectedUpdateTask">ConnectedUpdateTask</a></li><li><a href="global.html#createTask">createTask</a></li><li><a href="global.html#doTask">doTask</a></li><li><a href="global.html#editTask">editTask</a></li><li><a href="global.html#EditTaskButton">EditTaskButton</a></li><li><a href="global.html#EmptyTaskList">EmptyTaskList</a></li><li><a href="global.html#enterAddTaskMode">enterAddTaskMode</a></li><li><a href="global.html#enterEditTaskMode">enterEditTaskMode</a></li><li><a href="global.html#exitAddTaskMode">exitAddTaskMode</a></li><li><a href="global.html#exitEditTaskMode">exitEditTaskMode</a></li><li><a href="global.html#getTasks">getTasks</a></li><li><a href="global.html#getTasksFromStorage">getTasksFromStorage</a></li><li><a href="global.html#Main">Main</a></li><li><a href="global.html#pushTasksInStorage">pushTasksInStorage</a></li><li><a href="global.html#removeTask">removeTask</a></li><li><a href="global.html#RemoveTaskButton">RemoveTaskButton</a></li><li><a href="global.html#store">store</a></li><li><a href="global.html#Task">Task</a></li><li><a href="global.html#timerId">timerId</a></li><li><a href="global.html#UpdateTask">UpdateTask</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.3</a> on Wed Jan 15 2020 09:56:24 GMT+0100 (Central European Standard Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

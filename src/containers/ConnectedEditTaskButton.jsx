@@ -5,7 +5,12 @@ import {enterEditTaskMode} from '../actions';
 
 const mapDispatchToProps = (dispatch) => bindActionCreators({enterEditTaskMode}, dispatch);
 
-export default connect(
+/**
+ * Connects {@link EditTaskButton} to redux store.
+ */
+const ConnectedEditTaskButton = connect(
     null,
     mapDispatchToProps
-)(EditTaskButton)
+)(EditTaskButton);
+
+export default ConnectedEditTaskButton

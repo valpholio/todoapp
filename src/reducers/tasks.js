@@ -1,5 +1,10 @@
 import {CREATE_TASK, EDIT_TASK, DO_TASK, REMOVE_TASK, GET_TASKS, GET_TASKS_FROM_STORAGE} from '../actionTypes';
 
+/**
+ * Specialized reducer that handles tasks actions.
+ * @param {Object[]} state - Current state.
+ * @param {Object} action - Redux action.
+ */
 export default function tasksReducer(state=[],action) {
     switch (action.type) {
         case CREATE_TASK: {

@@ -5,7 +5,12 @@ import {removeTask} from '../actions';
 
 const mapDispatchToProps = (dispatch) => bindActionCreators({removeTask}, dispatch);
 
-export default connect(
+/**
+ * Connects {@link RemoveTaskButton} to redux store.
+ */
+const ConnectedRemoveTaskButton = connect(
     null,
     mapDispatchToProps
-)(RemoveTaskButton)
+)(RemoveTaskButton);
+
+export default ConnectedRemoveTaskButton

@@ -1,12 +1,16 @@
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
-import PropTypes from 'prop-types';
 import CompleteTaskButton from '../components/CompleteTaskButton.jsx';
 import {doTask} from '../actions';
 
 const mapDispatchToProps = (dispatch) => bindActionCreators({doTask}, dispatch);
 
-export default connect(
+/**
+ * Connects {@link CompleteTaskButton} to redux store.
+ */
+const ConnectedCompleteTaskButton = connect(
     null,
     mapDispatchToProps
-)(CompleteTaskButton)
+)(CompleteTaskButton);
+
+export default ConnectedCompleteTaskButton

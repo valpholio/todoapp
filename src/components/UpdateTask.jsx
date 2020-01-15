@@ -1,6 +1,16 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
+/**
+ * Form to create|edit task. Contains Title and Text input fields, Save and Cancel buttons.
+ * @param {function} createTask - Part of event handler, that is called on click on Save button, when task id is absent. Emits redux action to create a new task.
+ * @param {function} exitAddTaskMode - Part of event handler, that is called on click on Save button, when task id is absent. Informs subscribers that add task mode should be turned off.
+ * @param {function} editTask - Part of event handler, that is called on click on Save button, when task id is present. Emits redux action to edit the task.
+ * @param {function} exitEditTaskMode - Part of event handler, that is called on click on Save button, when task id is present. Informs subscribers that edit task mode should be turned off.
+ * @param {NumberLike=} id - Id of the task.
+ * @param {string} title - Title of the task.
+ * @param {string} text - Text of the task.
+ */
 const UpdateTask = ({createTask, exitAddTaskMode,editTask, exitEditTaskMode, ...task}) => {
     const [title, setTitle] = useState(task.title ||'');
     const [text, setText] = useState(task.text ||'');

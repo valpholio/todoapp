@@ -5,7 +5,12 @@ import {enterAddTaskMode} from '../actions';
 
 const mapDispatchToProps = (dispatch) => bindActionCreators({enterAddTaskMode}, dispatch);
 
-export default connect(
+/**
+ * Connects {@link AddTaskButton} AddTaskButton to redux store.
+ */
+const ConnectedAddTaskButton = connect(
     null,
     mapDispatchToProps
-)(AddTaskButton)
+)(AddTaskButton);
+
+export default ConnectedAddTaskButton

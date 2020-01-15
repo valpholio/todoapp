@@ -1,6 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+/**
+ * Button to open create task form.
+ * @param {function} enterAddTaskMode - Event handler, called on click on the button. Emits redux action to inform subscribed containers that add task mode should be turned on.
+ */
 const AddTaskButton = ({
                            enterAddTaskMode = () => {}
                        }) => {

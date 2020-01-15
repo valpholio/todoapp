@@ -1,6 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+/**
+ * Representation of the task.
+ * @param {string} title - Title of the task.
+ * @param {string} text - Text of the task.
+ */
 const Task = ({title, text}) => {
     return (
         <div>
