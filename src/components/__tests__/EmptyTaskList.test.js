@@ -4,7 +4,7 @@ import EmptyTaskList from '../EmptyTaskList.jsx';
 
 describe('EmptyTaskList', () => {
     test('snapshot renders', () => {
-        const component = renderer.create(<EmptyTaskList id='1'/>);
+        const component = renderer.create(<EmptyTaskList/>);
         let tree = component.toJSON();
         expect(tree).toMatchSnapshot();
     });
