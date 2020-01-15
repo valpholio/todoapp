@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`UpdateTask snapshot renders 1`] = `
+<div>
+  <div>
+    Title:
+    <br />
+    <input
+      className="form-control"
+      onChange={[Function]}
+      type="text"
+      value=""
+    />
+    <br />
+    Text:
+    <br />
+    <textarea
+      className="form-control"
+      name="text"
+      onChange={[Function]}
+      rows="5"
+      value=""
+    />
+  </div>
+  <button
+    className="btn btn-default"
+    disabled={true}
+    onClick={[Function]}
+  >
+    Save
+  </button>
+  <button
+    className="btn btn-default"
+  >
+    Cancel
+  </button>
+</div>
+`;

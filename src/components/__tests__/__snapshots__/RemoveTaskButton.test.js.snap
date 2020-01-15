@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RemoveTaskButton snapshot renders 1`] = `
+<button
+  className="btn btn-default btn-sm"
+  onClick={[Function]}
+>
+  <span
+    className="glyphicon glyphicon-remove"
+  />
+   Remove
+</button>
+`;

@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Task snapshot renders 1`] = `
+<div>
+  <h3
+    className="task-name"
+  >
+    title
+  </h3>
+  <div>
+    text
+  </div>
+</div>
+`;
