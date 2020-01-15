@@ -1,4 +1,4 @@
-import React, { useRef, useLayoutEffect } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
@@ -8,6 +8,10 @@ import ConnectedTaskList from './ConnectedTaskList.jsx';
 import {enterAddTaskMode, exitAddTaskMode} from '../actions';
 import '../styles/Main.css';
 
+/**
+ * Main page container.
+ * @param {boolean} isAddMode - Indicator of add task mode. Add task form is displayed when isAddMode is true.
+ */
 const Main = ({isAddMode}) => {
     return (
         <div className='Main'>

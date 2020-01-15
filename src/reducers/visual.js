@@ -1,5 +1,10 @@
 import {ENTER_ADD_TASK_MODE, EXIT_ADD_TASK_MODE, ENTER_EDIT_TASK_MODE, EXIT_EDIT_TASK_MODE} from '../actionTypes';
 
+/**
+ * Specialized reducer that handles actions for updating visual elements.
+ * @param {Object} state - Current state.
+ * @param {Object} action - Redux action.
+ */
 export default function visualReducer(state = {isAddTaskMode: false, isEditTaskMode: false, editTaskId: ''}, action) {
     switch (action.type) {
         case ENTER_ADD_TASK_MODE: {

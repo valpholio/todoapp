@@ -1,7 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const RemoveTaskButton = ({removeTask = () => {}, id}) => {
+/**
+ * Button to delete task.
+ * @param {NumberLike} id - Id of the task to be deleted.
+ * @param {function} enterEditTaskMode - Event handler, called on click on the button. Emits redux action to delete the task.
+ */
+const RemoveTaskButton = ({id, removeTask = () => {}}) => {
     return (
             <button onClick={() => removeTask(id)} className="btn btn-default btn-sm">
                 <span className="glyphicon glyphicon-remove"></span> Remove

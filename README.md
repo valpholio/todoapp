@@ -1,4 +1,7 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is basic Todo app. In contains one page with features: add a new task, mark as done, edit or delete existing tasks. 
+Task list is descending sorted, case ignored. Tasks are sync with local storage appr. every 2000ms. 
+
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). Script files are left untouched. Some unused packages present in package.json, because they can be used in the future.
 
 ## Available Scripts
 

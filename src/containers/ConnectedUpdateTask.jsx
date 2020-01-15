@@ -5,7 +5,12 @@ import {createTask, exitAddTaskMode,editTask, exitEditTaskMode} from '../actions
 
 const mapDispatchToProps = (dispatch) => bindActionCreators({createTask,exitAddTaskMode,editTask, exitEditTaskMode}, dispatch);
 
-export default connect(
+/**
+ * Connects {@link UpdateTask} to redux store.
+ */
+const ConnectedUpdateTask = connect(
     null,
     mapDispatchToProps
-)(UpdateTask)
+)(UpdateTask);
+
+export default ConnectedUpdateTask
